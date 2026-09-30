@@ -1,0 +1,13 @@
+name: Release and Build Python Wheels
+
+on: pull_request
+
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printf '%s' 'v9.9.9-from-fork' > version.txt
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: release-version
+          path: version.txt
